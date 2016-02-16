@@ -17,6 +17,7 @@ public class main {
         boolean End = false;
         int key2BSearch;
         int index;
+        long startTime, endTime; //variables to track performance
         //initialising list randG with 10 numbers
         randomGenerator randG = new randomGenerator(); 
         hashOpen hO = new hashOpen();
@@ -51,6 +52,9 @@ public class main {
                     do {
                     System.out.print("Insert number to be searched: ");
                     key2BSearch = sc.nextInt();
+                    
+                    startTime = System.nanoTime();		//start to track time
+            		
                     if (key2BSearch == -1)
                         break;
                     index = hO.search(key2BSearch);
@@ -59,6 +63,10 @@ public class main {
                     else
                         System.out.println("Key " + key2BSearch + " with code " + hO.hash(key2BSearch) +" found at index " + index + " % " + hO.tableSize);
                     System.out.println("Total number of comparisons excluding those in main: " + hO.getComparisons());
+                    
+                    endTime = System.nanoTime()-startTime;
+            		System.out.println("Elapsed Time: "+endTime); //measures elapsed time
+            		
                     } while (key2BSearch != -1);
                     break;
                 case 4:
@@ -71,6 +79,9 @@ public class main {
                     do {
                     System.out.print("Insert number to be searched: ");
                     key2BSearch = sc.nextInt();
+                    
+                    startTime = System.nanoTime();		//start to track time
+                    
                     if (key2BSearch == -1)
                         break;
                     index = HC.search(key2BSearch);
@@ -79,6 +90,9 @@ public class main {
                     else
                         System.out.println("Key " + key2BSearch + " found at index " + index );
                     System.out.println("Total number of comparisons excluding those in main: " + HC.getComparisons());
+                    
+                    endTime = System.nanoTime()-startTime;
+            		System.out.println("Elapsed Time: "+endTime);
                     } while (key2BSearch != -1);
                     break;
                 case 5:
