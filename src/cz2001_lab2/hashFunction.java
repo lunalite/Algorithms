@@ -11,7 +11,7 @@ import java.lang.Math;
 //Could try and implement a table size that changes accordingly to the number of keys that are going to be inserted.
 
 public class hashFunction {
-    protected static int tableSize = 997;
+    protected static int tableSize = 1000;
     
     public int hash(int key) { 
         // hashFunction with key mod prime number, 997 to allow for a bigger table size

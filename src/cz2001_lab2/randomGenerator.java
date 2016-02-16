@@ -6,21 +6,31 @@
 package cz2001_lab2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.lang.Math;
 
 public class randomGenerator {
     private ArrayList<Integer> rList;
-    private static final int SIZE = 8999;
+    private ArrayList<Integer> aList;
+    private static final int SIZE = 1000000;
     public randomGenerator() {
+        this.aList = new ArrayList<Integer>();
         this.rList = new ArrayList<Integer>();
+
     }
     
     public void generate(int size) {
-        for (int i = 0; i < size; i ++) {
-            rList.add((int)(Math.random()*SIZE+1000));
-        }
-    }
+		int x = 0;
+    	for (int i=0;i<SIZE;i++){
+			aList.add(i);
+		}
+		Collections.shuffle(aList);
+		for (int i=0; i < size; i ++) {
+			rList.add(aList.remove(0));
+			}
+		}
+    
     public ArrayList<Integer> getList() {
         return rList;
     }
