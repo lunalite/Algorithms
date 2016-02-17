@@ -23,11 +23,11 @@ public class randomGenerator {
     public void generate(int size) {
 		int x = 0;
     	for (int i=0;i<SIZE;i++){
-			aList.add(i);
+			aList.add(i);		//Generates numbers 0 to SIZE (in this case, 999999)
 		}
-		Collections.shuffle(aList);
+		Collections.shuffle(aList);	//Shuffles numbers
 		for (int i=0; i < size; i ++) {
-			rList.add(aList.remove(0));
+			rList.add(aList.remove(0)); //Retrieves required number of random numbers without repetition
 			}
 		}
     
